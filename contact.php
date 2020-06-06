@@ -37,7 +37,15 @@ $headers = "From: $myemail\n";
 
 $headers .= "Reply-To: $email_address";
 
-mail($to,$email_subject,$email_body,$headers);
+if(mail($to,$email_subject,$email_body,$headers))
+{
+    echo "<script type='text/javascript'> alert('Message sent successfully!');
+          window.history.log(-1);
+          </script>";
+}
+else {
+    window.history.log(-1);
+}
 }
 
 
